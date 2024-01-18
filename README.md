@@ -23,3 +23,4 @@ Get-ChildItem -Path "sql-server-snippet" -Filter *.snippet | ForEach-Object {
 - Active hotkey Ctrl+K, Ctrl+X (press Ctrl K => release => press Ctrl X)
 - Choose or type `My Code Snippets` 
 - Choose whatever you want, you're all set 
+![usage demo](media/usage_snippet.gif)
