@@ -14,8 +14,9 @@
 		</Header>
 		<Snippet>
 			<Code Language="SQL">
-ALTER PROCEDURE uspFindProducts(
+ALTER PROCEDURE USP_FindProducts(
     @min_list_price AS DECIMAL = 0
+    -- param can set default value 
     ,@max_list_price AS DECIMAL = 999999
     ,@name AS VARCHAR(max)
 )
@@ -33,7 +34,11 @@ BEGIN
 END;
 
 /*
-
+-- Call by exercute keyword 
+EXECUTE uspFindProducts 
+    @name = 'Trek';
+-- Other way
+EXEC uspFindProducts 100;
 */
 
 			</Code>
