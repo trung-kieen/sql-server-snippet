@@ -1,8 +1,8 @@
 # Setup
 Put these snippet file in to folder store snippet
 - Clone repo
-- Go to Document 
-- `\Documents\SQL Server Management Studio\Code Snippets\SQL\My Code Snippets\` Naviagate your directory like this 
+- Go to Document in C disk 
+- `\Documents\SQL Server Management Studio\Code Snippets\SQL\My Code Snippets\` Navigate your directory like this 
 - Put all file extension .snippet into this folder
 
 Or you just open powershell and run these command ^^ (require git and properly version of powershell)
