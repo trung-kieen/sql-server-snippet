@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>INNER JOIN</Title>
+                        <Shortcut></Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="SQL">
+SELECT  
+    c.id candidate_id,
+    c.fullname candidate_name,
+    e.id employee_id,
+    e.fullname employee_name
+FROM 
+    hr.candidates c
+    INNER JOIN hr.employees e 
+        ON e.fullname = c.fullname;
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

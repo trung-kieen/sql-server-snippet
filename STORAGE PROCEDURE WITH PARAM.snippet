@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>STORAGE PROCEDURE WITH PARAM</Title>
+                        <Shortcut></Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="SQL">
+ALTER PROCEDURE uspFindProducts(
+    @min_list_price AS DECIMAL = 0
+    ,@max_list_price AS DECIMAL = 999999
+    ,@name AS VARCHAR(max)
+)
+AS
+BEGIN
+    SELECT
+        product_name,
+        list_price
+    FROM 
+        production.products
+    WHERE
+        list_price &lt;= @min_list_price
+    ORDER BY
+        list_price;
+END;
+
+/*
+
+*/
+
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

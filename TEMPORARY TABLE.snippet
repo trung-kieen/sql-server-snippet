@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>TEMPORARY TABLE</Title>
+                        <Shortcut></Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="SQL">
+/*
+Convention: One # before name table name global temporary table 
+	  Two ## for local temporary table
+*/
+
+SELECT
+    product_name,
+    list_price
+INTO #trek_products --- temporary table name trek_products 
+FROM
+    production.products
+WHERE
+    brand_id = 9
+    
+-- Second way
+CREATE TABLE ##heller_products (
+    product_name VARCHAR(MAX),
+    list_price DEC(10,2)
+);
+
+INSERT INTO ##heller_products
+SELECT
+    product_name,
+    list_price
+FROM 
+    production.products
+WHERE
+    brand_id = 3;
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

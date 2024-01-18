@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>TRIGGER INSTEAD OF DELETE</Title>
+                        <Shortcut></Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="SQL">
+CREATE TRIGGER trgHREmployeeDoNotDelete
+ON HREmployees
+INSTEAD OF DELETE
+AS
+   UPDATE HREmployees
+   SET isActive = 0
+   WHERE EmployeeID IN (SELECT EmployeeID FROM DELETED)
+GO
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

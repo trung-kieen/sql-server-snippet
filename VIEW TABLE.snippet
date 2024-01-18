@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>VIEW TABLE</Title>
+                        <Shortcut></Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="SQL">
+CREATE VIEW sales.product_info
+AS
+SELECT
+    product_name, 
+    brand_name, 
+    list_price
+FROM
+    production.products p
+INNER JOIN production.brands b 
+        ON b.brand_id = p.brand_id;
+
+-- Test view table
+SELECT * FROM sales.product_info;
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

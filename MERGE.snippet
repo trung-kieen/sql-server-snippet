@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MERGE</Title>
+                        <Shortcut></Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="SQL">
+MERGE sales.category t 
+    USING sales.category_staging s
+ON (s.category_id = t.category_id)
+WHEN MATCHED
+    THEN UPDATE SET 
+        t.category_name = s.category_name,
+        t.amount = s.amount
+WHEN NOT MATCHED BY TARGET 
+    THEN INSERT (category_id, category_name, amount)
+         VALUES (s.category_id, s.category_name, s.amount)
+WHEN NOT MATCHED BY SOURCE 
+    THEN DELETE;
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
