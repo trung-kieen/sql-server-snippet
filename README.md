@@ -25,5 +25,5 @@ Get-ChildItem -Path "sql-server-snippet" -Filter *.snippet | ForEach-Object {
 - Choose whatever you want, you're all set 
 ![usage demo](media/usage_snippet.gif)
 # Thanks to 
-[Sql server docs with dummy data](https://www.sqlservertutorial.net/)
-[Sql cheatsheet](https://github.com/enochtangg/quick-SQL-cheatsheet)
+- [Sql server docs with dummy data](https://www.sqlservertutorial.net/)
+- [Sql cheatsheet](https://github.com/enochtangg/quick-SQL-cheatsheet)
